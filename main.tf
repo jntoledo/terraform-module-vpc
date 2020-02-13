@@ -1,14 +1,6 @@
 # ----------------------------------------------------------------------------------------------------------------------
 # NACL - Default ACL
 # ----------------------------------------------------------------------------------------------------------------------
-
-resource "aws_network_acl" "public" {
-  vpc_id     = "${module.vpc.vpc_id}"
-  subnet_ids = ["${module.vpc.public_subnet_ids}"]
-
-  tags = "${merge(local.common_tags, map("Name", "${var.environment} - public-subnet"))}"
-}
-
 resource "aws_network_acl_rule" "public_inbound_allow_all_tcp" {
   
   network_acl_id = "${aws_network_acl.public.id}"
