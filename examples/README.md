@@ -3,22 +3,22 @@
 A configuração neste diretório cria um conjunto de recursos de VPC junto com ACLs de rede para várias sub-redes.
 
 As regras de rede ACL para tráfego de entrada e saída são definidas da seguinte maneira:
-1. As sub-redes pública e elasticache terão regras de ACL de rede fornecidas
+1. As sub-redes pública terão regras de ACL de rede fornecidas
 1. As sub-redes privadas serão associadas às regras padrão da ACL da rede (a entrada e a saída somente IPV4 estão abertas para todos)
 
 ## Uso
 
 Para executar este exemplo, você precisa executar:
 
-`` bash
-$ init terraform
-$ plano de terraform
-aplicar $ terraform
-`` ``
+```
+$ terraform init
+$ terraform plan
+$ terraform apply
+```
 
 Observe que este exemplo pode criar recursos que podem custar dinheiro (AWS Elastic IP, por exemplo). Execute `terraform destroy` quando você não precisar desses recursos.
 
-<! - INÍCIO DE GANCHO DE DOCS TERRAFORM PRÉ-COMPROMISSO ->
+<!-- INÍCIO DE GANCHO DE DOCS TERRAFORM PRÉ-COMPROMISSO -->
 ## Provedores
 
 Nenhum provedor.
